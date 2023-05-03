@@ -1,10 +1,10 @@
 package com.example.api.services;
 
-import com.example.api.domain.User;
+import com.example.api.domain.People;
 
 public interface UserService {
 
-    User findById(Integer id);
+    People findById(Integer id);
 
 
 }

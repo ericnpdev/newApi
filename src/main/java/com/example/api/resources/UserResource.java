@@ -1,7 +1,7 @@
 package com.example.api.resources;
 
 
-import com.example.api.domain.User;
+import com.example.api.domain.People;
 import com.example.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class UserResource {
     private UserService service;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findById(@PathVariable Integer id ) {
+    public ResponseEntity<People> findById(@PathVariable Integer id ) {
         return ResponseEntity.ok().body(service.findById(id));
 
 
