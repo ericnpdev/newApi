@@ -1,9 +1,11 @@
 package com.example.api.services.impl;
 
 import com.example.api.domain.People;
+import com.example.api.domain.dto.UserDTO;
 import com.example.api.respositories.UserRepository;
 import com.example.api.services.UserService;
 import com.example.api.services.excpetions.ObjectNotFoundException;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository repository;
 
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
     public People findById(Integer id) {
@@ -30,4 +34,9 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public People create(UserDTO obj) {
+        return repository.save(mapper.map(obj, People.class));
     }
+
+}
