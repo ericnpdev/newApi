@@ -10,5 +10,7 @@ public interface UserService {
     People findById(Integer id);
     List<People> findAll();
     People create(UserDTO obj);
+    People update(UserDTO obj);
+
 
 }
