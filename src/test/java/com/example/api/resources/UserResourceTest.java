@@ -131,8 +131,6 @@ class UserResourceTest {
         verify(service, times(1)).delete(anyInt());
     }
 
-
-
     private void startPeople() {
         user = new People(ID, NAME, EMAIL, PASSWORD);
         userDTO = new UserDTO(ID, NAME, EMAIL, PASSWORD);
